@@ -1,0 +1,8 @@
+title: Criando APIs com Python e FastAPI
+description: Repositório criado para documentar e centralizar conteúdos, dicas, tutoriais e exemplos de código sobre a construção de APIs com a linguagem de programação Python e o framework web FastAPI..
+show_downloads: true
+google_analytics: ''
+theme: jekyll-theme-cayman
+url: "https://fastapi.justcode.com.br"
+plugins:
+  - jekyll-sitemap
