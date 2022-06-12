@@ -64,6 +64,34 @@ Sempre que possível escrevo tutoriais no meu blog pessoal 🚀:
 
 ---
 
+## Como executar o projeto
+
+```bash
+git clone git@github.com:natorsc/python-fastapi.git
+```
+
+```bash
+poetry install
+```
+
+```bash
+poetry shell
+```
+
+```bash
+python contrib/initial_confg_generator.py
+```
+
+```bash
+python runserver.py
+```
+
+ou
+
+```bash
+./runserver.sh
+```
+
 ## 🎓 Tutoriais
 
 - [Blog - serie sobre FastAPI](https://blog.justcode.com.br/series/python-e-fastapi).
