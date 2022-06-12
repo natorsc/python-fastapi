@@ -26,6 +26,7 @@ classifiers = [
 [tool.poetry.dependencies]
 python = "^3.10"
 fastapi = { extras = ["all"], version = "^0.78.0" }
+SQLAlchemy = "^1.4.37"
 
 [tool.poetry.dev-dependencies]
 pylint = "^2.14.1"
