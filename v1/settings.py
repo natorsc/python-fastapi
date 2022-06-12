@@ -13,7 +13,7 @@ class Settings(BaseSettings):
     DEBUG: str = 'True'
     DATABASE_URL: str = 'sqlite:///dev.sqlite3'
     FAVICON: Path = CURRENT_DIRECTORY.joinpath(
-        'static', 'favicon', 'justcode.ico'
+        'static', 'favicon', 'justcode-512x512.ico'
     )
     STATIC_PATH: Path = CURRENT_DIRECTORY.joinpath('static')
     TEMPLATES_PATH: Path = CURRENT_DIRECTORY.joinpath('templates')

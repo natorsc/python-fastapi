@@ -1,0 +1,1 @@
+function hidden_alert(e){e.parentNode.classList.remove("show")}

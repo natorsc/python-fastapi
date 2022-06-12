@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-light mb-5">
+    <div class="container">
+        <a class="navbar-brand" href="{{ url_for('home_web') }}">API justCode</a>
+        <button class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('home_web') }}" aria-current="page">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                        API
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{{ url_for('redoc_html') }}" target="_blank">Redoc</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('swagger_ui_html') }}" target="_blank">Swagger</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://blog.justcode.com.br/" target="_blank">Blog</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
