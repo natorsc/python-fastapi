@@ -95,7 +95,7 @@ ou
 ## 🎓 Tutoriais
 
 - [Blog - serie sobre FastAPI](https://blog.justcode.com.br/series/python-e-fastapi).
-
+- [Python e FastAPI: Introdução e instalação](https://blog.justcode.com.br/python-e-fastapi-introducao-e-instalacao).
 ---
 
 ## 🔗 Links uteis

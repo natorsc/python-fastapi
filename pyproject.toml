@@ -27,6 +27,7 @@ classifiers = [
 python = "^3.10"
 fastapi = { extras = ["all"], version = "^0.78.0" }
 SQLAlchemy = "^1.4.37"
+alembic = "^1.8.0"
 
 [tool.poetry.dev-dependencies]
 pylint = "^2.14.1"
