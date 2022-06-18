@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from starlette.responses import FileResponse
 
-from .routers import home, todo
+from .routers import home, todo, ajax
 from .settings import Settings, get_settings
 
 settings: Settings = get_settings()
@@ -13,6 +13,7 @@ app.mount(
     app=StaticFiles(directory=settings.STATIC_PATH),
     name='static',
 )
+app.include_router(ajax.router)
 app.include_router(home.router)
 app.include_router(todo.router)
 

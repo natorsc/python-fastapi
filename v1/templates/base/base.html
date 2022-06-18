@@ -3,38 +3,42 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     {% if not DEBUG %}
     {% include 'base/components/google.html' %}
     {% endif %}
-    <meta name="author" content="{% block author %}Renato Cruz{% endblock %}">
-    <meta name="keywords" content="{% block keywords %}Python, FastAPI, JavaScrit, Ajax, {% endblock %}">
-    <meta name="description" content="{% block description %}API construída com a linguagem de programação Python e FastAPI{% endblock %}">
-    <link type="image/png" href="{{ url_for('static', path='/favicon/justcode-512x512.png') }}" rel="icon">
+    <meta content="{% block author %}Renato Cruz{% endblock %}" name="author">
+    <meta content="{% block keywords %}Python, FastAPI, JavaScrit, Ajax, {% endblock %}" name="keywords">
+    <meta content="{% block description %}API construída com a linguagem de programação Python e FastAPI{% endblock %}"
+          name="description">
+    <link href="{{ url_for('static', path='/favicon/justcode-512x512.png') }}" rel="icon" type="image/png">
     <title>{% block title %}{% endblock %} - API justCode</title>
     {% block css %}
     {% if DEBUG %}
     <link href="{{ url_for('static', path='/base/css/bootstrap.min.css') }}" rel="stylesheet">
     {% else %}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet">
     {% endif %}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
     {% endblock %}
 </head>
 
 <body>
-    {% include 'base/components/navbar.html' %}
-    {% block content %}{% endblock %}
-    {% include 'base/components/footer.html' %}
-    {% block js %}
-    {% if DEBUG %}
-    <script src="{{ url_for('static', path='/base/js/bootstrap.bundle.min.js') }}"></script>
-    {% else %}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    {% endif %}
-    <script src="{{ url_for('static', path='/base/js/close-alert-min.js') }}"></script>
-    {% endblock %}
+{% include 'base/components/navbar.html' %}
+{% block content %}{% endblock %}
+{% include 'base/components/footer.html' %}
+{% block js %}
+{% if DEBUG %}
+<script src="{{ url_for('static', path='/base/js/bootstrap.bundle.min.js') }}"></script>
+{% else %}
+<script crossorigin="anonymous"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+{% endif %}
+<script src="{{ url_for('static', path='/base/js/close-alert-min.js') }}"></script>
+{% endblock %}
 </body>
 
 </html>

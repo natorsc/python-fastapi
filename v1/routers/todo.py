@@ -9,7 +9,6 @@ from ..settings import Settings, get_settings
 
 settings: Settings = get_settings()
 
-
 router = APIRouter(
     prefix='/v1',
     tags=['todos'],
