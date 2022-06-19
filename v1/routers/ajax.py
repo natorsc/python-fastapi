@@ -10,7 +10,8 @@ CURRENT_DIRECTORY: Path = Path(__file__).resolve().parent
 ROOT_DIR: Path = CURRENT_DIRECTORY.parent
 
 AXIOS_FILE: Path = ROOT_DIR.joinpath('static', 'ajax', 'js', 'ajax-axios.js')
-BRYTHON_FILE: Path = ROOT_DIR.joinpath('static', 'ajax', 'js', 'ajax-brython.py')
+BRYTHON_FILE: Path = ROOT_DIR.joinpath(
+    'static', 'ajax', 'js', 'ajax-brython.py')
 FETCH_FILE: Path = ROOT_DIR.joinpath('static', 'ajax', 'js', 'ajax-fetch.js')
 JQUERY_FILE: Path = ROOT_DIR.joinpath('static', 'ajax', 'js', 'ajax-jquery.js')
 JSXMLHTTPREQUEST_FILE: Path = ROOT_DIR.joinpath(
@@ -58,18 +59,6 @@ async def fetch_html(request: Request, settings: Settings = Depends(get_settings
         name='ajax/fetch.html',
         context={'request': request, 'DEBUG': settings.DEBUG, 'data': data},
     )
-
-
-@router.get('/htmx/web', response_class=HTMLResponse, include_in_schema=False)
-async def htmx_html(request: Request, settings: Settings = Depends(get_settings)):
-    templates = settings.TEMPLATES
-    # with open(FETCH_FILE, 'r') as f:
-    #    data: str = f.read()
-    #    f.close()
-    # return templates.TemplateResponse(
-    #    name='ajax/htmx.html',
-    #    context={'request': request, 'DEBUG': settings.DEBUG, 'data': data},
-    # )
 
 
 @router.get('/jquery/web', response_class=HTMLResponse, include_in_schema=False)

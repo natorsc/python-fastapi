@@ -33,9 +33,20 @@
                         <li><a class="dropdown-item" href="{{ url_for('brython_html') }}">Brython</a></li>
                         <li><a class="dropdown-item" href="{{ url_for('fetch_html') }}">Fetch</a></li>
                         <li><a class="dropdown-item" href="{{ url_for('jquery_html') }}">jQuery</a></li>
-                        <li><a class="dropdown-item" href="{{ url_for('jsxmlhttprequest_html') }}">XMLHttpRequest</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('jsxmlhttprequest_html') }}">XMLHttpRequest</a>
+                        </li>
                     </ul>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" href="#"
+                        role="button" aria-expanded="false">
+                        Converter
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{{ url_for('home_convert_text_html') }}">Texto</a></li>
+                </li>
+            </ul>
+            </li>
             </ul>
             <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item">

@@ -1,0 +1,37 @@
+{% extends "base/base.html" %}
+{% block keywords %}{{ super() }}capitalize, lower, upper, title{% endblock %}
+{% block description %}{{ super() }} conversor de texto{% endblock %}
+{% block title %}conversor de texto{% endblock %}
+{% block content %}
+<div class="container">
+    <h1 class="text-center">Conversor de texto</h1>
+    <div class="my-5">
+        <textarea class="form-control" id="textarea" placeholder="Texto" maxlength="1024"></textarea>
+        <div class="form-text">Campo limitado a 1024 caracteres.</div>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-primary" onclick="convertText(this, 'capitalize')">
+            Capitalize
+        </button>&emsp;
+        <button class="btn btn-primary" onclick="convertText(this, 'lower')">
+            Lower
+        </button>&emsp;
+        <button class="btn btn-primary" onclick="convertText(this, 'upper')">
+            Upper
+        </button>&emsp;
+        <button class="btn btn-primary" onclick="convertText(this, 'title')">
+            Title
+        </button>
+    </div>
+    {% include 'base/components/alert-error.html' %}
+</div>
+{% endblock %}
+{% block js %}
+{{ super() }}
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+{% if DEBUG %}
+<script src="{{ url_for('static', path='/convert-text/js/main.js') }}"></script>
+{% else %}
+<script src="{{ url_for('static', path='/convert-text/js/main-min.js') }}"></script>
+{% endif %}
+{% endblock %}

@@ -29,7 +29,13 @@ subprocess.call(
 )
 
 # Run migration.
+# subprocess.call(
+#     ['poetry', 'run', 'alembic', 'upgrade', 'head'],
+#     cwd=ROOT_DIR,
+# )
+
+# Testando stamp ao invés de upgrade.
 subprocess.call(
-    ['poetry', 'run', 'alembic', 'upgrade', 'head'],
+    ['poetry', 'run', 'alembic', 'stamp', 'head'],
     cwd=ROOT_DIR,
 )
