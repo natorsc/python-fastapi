@@ -25,7 +25,7 @@
     {% endblock %}
 </head>
 
-<body>
+<body {% block brython %}{% endblock %}>
 {% include 'base/components/navbar.html' %}
 {% block content %}{% endblock %}
 {% include 'base/components/footer.html' %}

@@ -3,7 +3,7 @@
 {% block css %}
 {{ super() }}
 <link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/styles/base16/material-palenight.min.css"
-      rel="stylesheet">
+    rel="stylesheet">
 {% endblock %}
 {% block content %}
 <div class="container">
@@ -30,11 +30,9 @@
     <p id="result">Esse texto será alterado...</p>
     <hr class="my-5">
     <h2>Código JavaScript utilizado</h2>
-    <pre>
-        <code class="JavaScript">
-            
-        </code>
-    </pre>
+    <pre><code class="JavaScript">
+{{ data|e }}
+    </code></pre>
 </div>
 {% endblock %}
 {% block js %}

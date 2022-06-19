@@ -3,7 +3,7 @@
 {% block css %}
 {{ super() }}
 <link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/styles/base16/material-palenight.min.css"
-      rel="stylesheet">
+    rel="stylesheet">
 {% endblock %}
 {% block content %}
 <div class="container">
@@ -29,56 +29,10 @@
     <p>Resultado:</p>
     <p id="result">Esse texto será alterado...</p>
     <hr class="my-5">
-
     <h2>Código JavaScript utilizado</h2>
     <pre><code class="JavaScript">
-        
-const APIURL = &apos;/v1/ajax/concatenate/names&apos;;
-
-let paragraph = document.getElementById(&apos;result&apos;);
-            
-function sendDataByGet(button) {
-    let firstName = document.getElementById(&apos;firstName&apos;);
-    let lastName = document.getElementById(&apos;lastName&apos;);
-            
-    button.disabled = true;
-            
-    axios.get(APIURL, {
-        params: {
-            &apos;first_name&apos;: firstName.value,
-            &apos;last_name&apos;: lastName.value,
-        }
-        }).then((response) =&gt; {
-            console.log(&apos;GET&apos;, response);
-            paragraph.innerHTML = `Bem vindo
-            &lt;b&gt;${response[&apos;data&apos;][&apos;first_name&apos;]}&lt;/b&gt; 
-            &lt;b&gt;${response[&apos;data&apos;][&apos;last_name&apos;]}&lt;/b&gt;.`;
-        }).finally(() =&gt; {
-            button.disabled = false;
-        });
-}
-            
-function sendDataByPost(button) {
-    let firstName = document.getElementById(&apos;firstName&apos;);
-    let lastName = document.getElementById(&apos;lastName&apos;);
-            
-    button.disabled = true;
-            
-    // As requisições por padrão são json e utf-8.
-    axios.post(APIURL, {
-        &apos;first_name&apos;: firstName.value,
-        &apos;last_name&apos;: lastName.value,
-        }).then((response) =&gt; {
-            console.log(&apos;POST&apos;, response);
-            paragraph.innerHTML = `Bem vindo
-            &lt;b&gt;${response[&apos;data&apos;][&apos;first_name&apos;]}&lt;/b&gt;
-            &lt;b&gt;${response[&apos;data&apos;][&apos;last_name&apos;]}&lt;/b&gt;.`;
-        }).finally(() =&gt; {
-            button.disabled = false;
-        });
-}
-            </code></pre>
-
+{{ data|e }}
+    </code></pre>
 </div>
 {% endblock %}
 {% block js %}

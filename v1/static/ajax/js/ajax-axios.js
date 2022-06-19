@@ -14,7 +14,6 @@ function sendDataByGet(button) {
             'last_name': lastName.value,
         }
     }).then((response) => {
-        console.log('GET', response);
         paragraph.innerHTML = `Bem vindo
         <b>${response['data']['first_name']}</b> 
         <b>${response['data']['last_name']}</b>.`;
@@ -34,7 +33,6 @@ function sendDataByPost(button) {
         'first_name': firstName.value,
         'last_name': lastName.value,
     }).then((response) => {
-        console.log('POST', response);
         paragraph.innerHTML = `Bem vindo
         <b>${response['data']['first_name']}</b>
         <b>${response['data']['last_name']}</b>.`;

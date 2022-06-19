@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light mb-5">
     <div class="container">
         <a class="navbar-brand" href="{{ url_for('home_web') }}">API justCode</a>
-        <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
-                data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+        <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+            class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -12,13 +12,28 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
-                       id="navbarDropdown" role="button">
+                        id="navbarDropdown" role="button">
                         API
                     </a>
                     <ul aria-labelledby="navbarDropdown" class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{ url_for('redoc_html') }}" target="_blank">Redoc</a></li>
                         <li><a class="dropdown-item" href="{{ url_for('swagger_ui_html') }}" target="_blank">Swagger</a>
                         </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" href="#"
+                        role="button" aria-expanded="false">
+                        Ajax
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{{ url_for('axios_html') }}">Axios</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('brython_html') }}">Brython</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('fetch_html') }}">Fetch</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('jquery_html') }}">jQuery</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('jsxmlhttprequest_html') }}">XMLHttpRequest</a></li>
                     </ul>
                 </li>
             </ul>

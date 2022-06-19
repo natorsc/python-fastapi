@@ -1,5 +1,6 @@
 {% extends 'base/base.html' %}
-{% block title %}Ajax com Fetch e FastAPI{% endblock %}
+{% block title %}Ajax com Brython e FastAPI{% endblock %}
+{% block brython %}onload="brython()"{% endblock %}
 {% block css %}
 {{ super() }}
 <link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/styles/base16/material-palenight.min.css"
@@ -7,7 +8,7 @@
 {% endblock %}
 {% block content %}
 <div class="container">
-    <h1 class="text-center">Requisições Ajax com Axios e FastAPI</h1>
+    <h1 class="text-center">Requisições Ajax com Brython e FastAPI</h1>
     <form class="my-5" id="form">
         <div>
             <label class="form-label" for="firstName">Nome:</label>
@@ -19,29 +20,27 @@
             <input class="form-control" id="lastName" maxlength="16" name="lastName" type="text">
             <small class="text-muted">Digite um sobrenome.</small>
         </div>
-        <button class="btn btn-primary" onclick="sendDataByGet(this)" type="button">
+        <button class="btn btn-primary" id="buttonGet" type="button">
             Dados via GET
         </button>
-        <button class="btn btn-primary" onclick="sendDataByPost(this)" type="button">
+        <button class="btn btn-primary" id="buttonPost" type="button">
             Dados via POST
         </button>
     </form>
     <p>Resultado:</p>
     <p id="result">Esse texto será alterado...</p>
     <hr class="my-5">
-    <h2>Código JavaScript utilizado</h2>
-    <pre><code class="JavaScript">
+    <h2>Código Python utilizado</h2>
+    <pre><code class="python">
 {{ data|e }}
     </code></pre>
 </div>
 {% endblock %}
 {% block js %}
 {{ super() }}
-{% if DEBUG %}
-<script src="{{ url_for('static', path='/ajax/js/ajax-fetch.js') }}"></script>
-{% else %}
-<script src="{{ url_for('static', path='/ajax/js/ajax-fetch-min.js') }}"></script>
-{% endif %}
+<script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
+<script src="{{ url_for('static', path='/ajax/js/ajax-brython.py') }}" type="text/python"></script>
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
 {% endblock %}
